@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumo ao Mundo - Blog de Viagens e Lifestyle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-image {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .comment-avatar {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body class="bg-blue-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <h1 class="title-font text-3xl text-blue-800">Rumo ao Mundo</h1>
+                </div>
+                
+                <nav class="w-full md:w-auto">
+                    <ul class="flex flex-wrap justify-center space-x-1 md:space-x-6">
+                        <li><a href="#" class="px-3 py-2 text-blue-800 hover:text-blue-600 font-medium">Home</a></li>
+                        <li><a href="#" class="px-3 py-2 text-blue-800 hover:text-blue-600 font-medium">Viagens</a></li>
+                        <li><a href="#" class="px-3 py-2 text-blue-800 hover:text-blue-600 font-medium">Gastronomia</a></li>
+                        <li><a href="#" class="px-3 py-2 text-blue-800 hover:text-blue-600 font-medium">Cultura</a></li>
+                        <li><a href="#" class="px-3 py-2 text-blue-800 hover:text-blue-600 font-medium">Dicas</a></li>
+                        <li><a href="#" class="px-3 py-2 text-blue-800 hover:text-blue-600 font-medium">Sobre</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-image h-96 flex items-center justify-center">
+        <div class="text-center px-4">
+            <h2 class="title-font text-4xl md:text-5xl text-blue-900 mb-4">Descubra o mundo com novos olhos</h2>
+            <p class="text-xl text-blue-800 mb-6">Inspiração para suas próximas aventuras</p>
+            
+            <div class="relative max-w-md mx-auto">
+                <input type="text" placeholder="Buscar artigos..." class="w-full py-3 px-4 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="md:flex">
+                <div class="md:flex-shrink-0 md:w-1/2">
+                    <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Praia paradisíaca">
+                </div>
+                <div class="p-8 md:w-1/2">
+                    <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold mb-1">Destaque</div>
+                    <h3 class="title-font text-3xl font-bold text-blue-900 mb-3">Os segredos das praias menos conhecidas da Tailândia</h3>
+                    <p class="mt-2 text-gray-600 mb-4">Descubra praias de areia branca e águas cristalinas longe dos roteiros turísticos convencionais. Neste artigo, compartilhamos dicas valiosas para explorar o litoral tailandês de forma autêntica e sustentável.</p>
+                    <div class="flex items-center mt-6">
+                        <img class="h-10 w-10 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Autor do post">
+                        <div>
+                            <p class="text-gray-900 font-medium">Ana Beatriz</p>
+                            <p class="text-gray-500 text-sm">15 de Maio, 2023 • 8 min de leitura</p>
+                        </div>
+                    </div>
+                    <button class="mt-6 px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300">Continuar lendo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Posts Grid -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="title-font text-3xl text-center text-blue-900 mb-12">Artigos Recentes</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Post 1 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md post-card transition duration-300">
+                <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Café em Paris">
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Gastronomia</span>
+                        <span class="text-gray-500 text-sm ml-2">• 12 de Maio, 2023</span>
+                    </div>
+                    <h3 class="title-font text-xl font-bold text-blue-900 mb-2">Os melhores cafés de Paris para quem ama literatura</h3>
+                    <p class="text-gray-600 mb-4">Conheça os cafés históricos que inspiraram grandes escritores e ainda preservam a atmosfera boêmia da cidade luz.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800">Ler mais →</a>
+                </div>
+            </div>
+            
+            <!-- Post 2 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md post-card transition duration-300">
+                <img class="w-full h-48 object-cover" src="https://img.freepik.com/fotos-gratis/pagode-vermelho-de-chureito-no-japao-com-o-monte-fuji-atras_181624-4668.jpg" alt="Templo no Japão">
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Cultura</span>
+                        <span class="text-gray-500 text-sm ml-2">• 5 de Maio, 2023</span>
+                    </div>
+                    <h3 class="title-font text-xl font-bold text-blue-900 mb-2">Rituais e tradições: uma imersão nos templos do Japão</h3>
+                    <p class="text-gray-600 mb-4">Aprenda a respeitar e participar dos rituais xintoístas e budistas durante sua visita aos templos japoneses.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800">Ler mais →</a>
+                </div>
+            </div>
+            
+            <!-- Post 3 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md post-card transition duration-300">
+                <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Malas de viagem">
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Dicas</span>
+                        <span class="text-gray-500 text-sm ml-2">• 28 de Abril, 2023</span>
+                    </div>
+                    <h3 class="title-font text-xl font-bold text-blue-900 mb-2">O guia definitivo para fazer malas inteligentes</h3>
+                    <p class="text-gray-600 mb-4">Técnicas comprovadas para levar tudo o que precisa sem excesso de peso e com organização impecável.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800">Ler mais →</a>
+                </div>
+            </div>
+            
+            <!-- Post 4 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md post-card transition duration-300">
+                <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Nova Zelândia">
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Viagens</span>
+                        <span class="text-gray-500 text-sm ml-2">• 20 de Abril, 2023</span>
+                    </div>
+                    <h3 class="title-font text-xl font-bold text-blue-900 mb-2">Rota dos Alpes Neozelandeses: de Queenstown a Christchurch</h3>
+                    <p class="text-gray-600 mb-4">Tudo o que você precisa saber para planejar a viagem de carro mais espetacular da Nova Zelândia.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800">Ler mais →</a>
+                </div>
+            </div>
+            
+            <!-- Post 5 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md post-card transition duration-300">
+                <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mercado de rua">
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Gastronomia</span>
+                        <span class="text-gray-500 text-sm ml-2">• 15 de Abril, 2023</span>
+                    </div>
+                    <h3 class="title-font text-xl font-bold text-blue-900 mb-2">Comida de rua em Bangkok: um guia para iniciantes</h3>
+                    <p class="text-gray-600 mb-4">Como identificar os melhores food stalls e quais pratos você não pode deixar de experimentar na capital tailandesa.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800">Ler mais →</a>
+                </div>
+            </div>
+            
+            <!-- Post 6 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-md post-card transition duration-300">
+                <img class="w-full h-48 object-cover" src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Moeda de viagem">
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Dicas</span>
+                        <span class="text-gray-500 text-sm ml-2">• 10 de Abril, 2023</span>
+                    </div>
+                    <h3 class="title-font text-xl font-bold text-blue-900 mb-2">Como economizar em viagens internacionais sem perder conforto</h3>
+                    <p class="text-gray-600 mb-4">Estratégias inteligentes para reduzir custos em hospedagem, transporte e alimentação sem abrir mão de experiências incríveis.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800">Ler mais →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <button class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300 font-medium">Carregar mais artigos</button>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="bg-blue-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="title-font text-3xl mb-4">Inscreva-se na nossa newsletter</h2>
+            <p class="max-w-2xl mx-auto mb-8">Receba dicas exclusivas, roteiros personalizados e ofertas especiais diretamente no seu e-mail.</p>
+            
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Seu melhor e-mail" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-900">
+                <button class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-r-lg font-medium transition duration-300">Assinar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Single Post Example (would be a separate page in reality) -->
+    <section class="container mx-auto px-4 py-12 hidden" id="single-post">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-8">
+                <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Viagens</span>
+                <h1 class="title-font text-3xl md:text-4xl font-bold text-blue-900 mt-4 mb-2">Os segredos das praias menos conhecidas da Tailândia</h1>
+                <div class="flex items-center mt-4">
+                    <img class="h-10 w-10 rounded-full mr-3" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Beatriz">
+                    <div>
+                        <p class="text-gray-900 font-medium">Ana Beatriz</p>
+                        <p class="text-gray-500 text-sm">15 de Maio, 2023 • 8 min de leitura</p>
+                    </div>
+                </div>
+            </div>
+            
+            <img class="w-full h-auto rounded-lg mb-8" src="https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Praia na Tailândia">
+            
+            <div class="prose max-w-none">
+                <p class="text-lg text-gray-700 mb-4">Quando pensamos em praias na Tailândia, logo nos vem à mente lugares como Phuket, Krabi ou as ilhas Phi Phi. Mas o país tem muito mais a oferecer além dos destinos mais badalados. Depois de várias viagens pelo país, descobri praias paradisíacas quase desertas, onde é possível desfrutar da natureza sem a agitação do turismo em massa.</p>
+                
+                <h2 class="title-font text-2xl text-blue-900 mt-8 mb-4">Koh Lipe: O Caribe da Tailândia</h2>
+                <p>A pequena ilha de Koh Lipe, no extremo sul do país, próximo à fronteira com a Malásia, é um verdadeiro paraíso. Com areia branca e água cristalina em tons de azul turquesa, a ilha tem apenas três praias principais e pode ser explorada inteiramente a pé.</p>
+                <img class="w-full h-auto rounded-lg my-6" src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Koh Lipe">
+                
+                <h2 class="title-font text-2xl text-blue-900 mt-8 mb-4">Koh Kood: A ilha do relaxamento</h2>
+                <p>Para quem busca tranquilidade absoluta, Koh Kood é a escolha perfeita. Localizada no Golfo da Tailândia, próxima ao Camboja, a ilha tem densas florestas tropicais, cachoeiras escondidas e praias quase desertas. O ritmo aqui é lento, perfeito para desacelerar.</p>
+                
+                <h2 class="title-font text-2xl text-blue-900 mt-8 mb-4">Dicas para visitar praias menos conhecidas</h2>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Alugue uma moto para explorar as ilhas com liberdade</li>
+                    <li>Leve dinheiro em espécie - muitos lugares não aceitam cartão</li>
+                    <li>Respeite o meio ambiente e evite o uso de plásticos descartáveis</li>
+                    <li>Visite durante a baixa temporada (maio a outubro) para evitar multidões</li>
+                    <li>Aprenda algumas palavras básicas em tailandês - os locais apreciam o esforço</li>
+                </ul>
+                
+                <div class="bg-blue-50 p-6 rounded-lg mt-8">
+                    <h3 class="title-font text-xl text-blue-900 mb-3">Sobre a autora</h3>
+                    <div class="flex items-start">
+                        <img class="h-16 w-16 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Beatriz">
+                        <div>
+                            <p class="font-medium">Ana Beatriz</p>
+                            <p class="text-gray-600 text-sm">Jornalista e viajante incansável, Ana já visitou mais de 40 países e adora compartilhar dicas para explorar o mundo de forma autêntica e sustentável.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comments Section -->
+            <div class="mt-16">
+                <h3 class="title-font text-2xl text-blue-900 mb-6">Comentários (3)</h3>
+                
+                <div class="space-y-6">
+                    <!-- Comment 1 -->
+                    <div class="flex">
+                        <img class="comment-avatar rounded-full mr-4" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Silva">
+                        <div class="flex-1">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <p class="font-medium">Carlos Silva</p>
+                                    <span class="text-gray-500 text-sm">2 dias atrás</span>
+                                </div>
+                                <p class="text-gray-700">Adorei as dicas! Já coloquei Koh Kood na minha lista de destinos para o próximo ano. Alguma recomendação específica de hospedagem por lá?</p>
+                                <button class="text-blue-600 text-sm mt-2 hover:text-blue-800">Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment 2 -->
+                    <div class="flex">
+                        <img class="comment-avatar rounded-full mr-4" src="https://randomuser.me/api/portraits/women/63.jpg" alt="Juliana Martins">
+                        <div class="flex-1">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <p class="font-medium">Juliana Martins</p>
+                                    <span class="text-gray-500 text-sm">1 semana atrás</span>
+                                </div>
+                                <p class="text-gray-700">Estive em Koh Lipe no ano passado e confirmo que é um paraíso! A praia Sunset é perfeita para ver o pôr do sol com uma cerveja local na mão.</p>
+                                <button class="text-blue-600 text-sm mt-2 hover:text-blue-800">Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment 3 -->
+                    <div class="flex">
+                        <img class="comment-avatar rounded-full mr-4" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Ricardo Almeida">
+                        <div class="flex-1">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <div class="flex justify-between items-center mb-2">
+                                    <p class="font-medium">Ricardo Almeida</p>
+                                    <span class="text-gray-500 text-sm">3 semanas atrás</span>
+                                </div>
+                                <p class="text-gray-700">Ótimo artigo! Uma dúvida: qual é a melhor época para visitar essas ilhas considerando o clima e o fluxo de turistas?</p>
+                                <button class="text-blue-600 text-sm mt-2 hover:text-blue-800">Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comment Form -->
+                <div class="mt-12">
+                    <h4 class="title-font text-xl text-blue-900 mb-4">Deixe seu comentário</h4>
+                    <form>
+                        <div class="mb-4">
+                            <textarea class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" rows="5" placeholder="Seu comentário..."></textarea>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <input type="text" class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Seu nome">
+                            <input type="email" class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Seu e-mail">
+                        </div>
+                        <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">Enviar comentário</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="title-font text-xl mb-4">Rumo ao Mundo</h3>
+                    <p class="text-blue-200">Inspiração e dicas para viajantes que buscam experiências autênticas ao redor do globo.</p>
+                </div>
+                <div>
+                    <h4 class="title-font text-lg mb-4">Navegação</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Sobre</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Contato</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="title-font text-lg mb-4">Categorias</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Viagens</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Gastronomia</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Cultura</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Dicas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="title-font text-lg mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-blue-200 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.12 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-blue-300">
+                <p>© 2023 Rumo ao Mundo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to toggle between home and single post view (for demo purposes)
+        document.addEventListener('DOMContentLoaded', function() {
+            // This would be handled by your routing in a real application
+            const urlParams = new URLSearchParams(window.location.search);
+            if(urlParams.has('post')) {
+                document.getElementById('single-post').classList.remove('hidden');
+                document.querySelector('main').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
